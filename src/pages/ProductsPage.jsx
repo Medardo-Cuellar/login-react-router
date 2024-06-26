@@ -40,7 +40,8 @@ export default function ProductsPage() {
                                 <p className="font-bold text-center m-2">
                                     {product.title}
                                 </p>
-                                <Link className="border text-center rounded-xl mx-4 border-white p-2" to={`/productos/${index}`}>Ver detalle</Link>
+                                <Link className="border text-center rounded-xl mx-4 border-white p-2" to={`/productos/${index+1
+                                }`}>Ver detalle</Link>
     
                             </article>
                         );
