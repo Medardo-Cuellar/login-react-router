@@ -24,5 +24,20 @@ export async function getProducts() {
       
     }//no se le pone headers porque es metodo get
   );
-  return response.json();
+  const json = await response.json();
+  return json.products;
+}
+
+// tarea 1: crear una funcion que reciba un id y retorne un producto necesitamos useState
+
+export async function getProductById(id) {
+  const token = window.localStorage.getItem("token");
+  const response = await fetch(`${API_URL}/products/${id}`,
+    {
+      method: "GET",
+      authorization: {authorization: `Bearer ${token}`},
+    }
+  );
+  const json = await response.json();
+  return json;
 }

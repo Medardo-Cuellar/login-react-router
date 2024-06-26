@@ -5,8 +5,9 @@ import { Toaster } from "sonner";
 
 //pages
 import HomePage from "./pages/HomePage";
-import LoginPAge from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -15,15 +16,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <LoginPAge />,
+    element: <LoginPage />,
   },
   {
     path: "/productos",
-    element: <ProductsPage />
+    element: <ProductsPage />,
   },
   {
-    productos: "/productos/:id",
-    element: <p>Producto</p>,
+    path: "/productos/:id",
+    element: <ProductDetailPage />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

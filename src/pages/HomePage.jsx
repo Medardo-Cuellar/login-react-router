@@ -7,7 +7,6 @@ export default function HomePage() {
             <p className="text-xl">This is a Home Page</p>
             <Link to="/login">login</Link>
             <Link to="/productos">productos</Link>
-            <Link to="/productos/1">producto</Link>
         </div>
     )
 }
