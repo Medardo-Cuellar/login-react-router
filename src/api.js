@@ -1,6 +1,6 @@
 const API_URL = "https://dummyjson.com";
 
-async function login(username, password) {
+export async function login(username, password) {
   const response = await fetch(`${API_URL}/auth/login`, {
     method: "POST",
     headers: {
@@ -15,4 +15,14 @@ async function login(username, password) {
   return json.token;
 }
 
-export { login };
+export async function getProducts() {
+  const token = window.localStorage.getItem("token");
+  const response = await fetch(`${API_URL}/products`,
+    {
+      method: "GET",
+      authorization: {authorization: `Bearer ${token}`},
+      
+    }//no se le pone headers porque es metodo get
+  );
+  return response.json();
+}

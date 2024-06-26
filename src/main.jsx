@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 //pages
 import HomePage from "./pages/HomePage";
 import LoginPAge from "./pages/LoginPage";
+import ProductsPage from "./pages/ProductsPage";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/productos",
-    element: <p>Productos</p>,
+    element: <ProductsPage />
   },
   {
     productos: "/productos/:id",
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-  <Toaster />
+  <Toaster richColors/>
   <RouterProvider router={router} />
   </>
   
