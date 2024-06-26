@@ -14,6 +14,10 @@ export default function ProductsPage() {
 
     useEffect(() => {console.log("use effect count", count)}, [count]);
 
+    useEffect(() => { console.log("sin dependencias") });
+
+    //nunca actualizar un estado cuando ese estado depende de si mismo o se crea un loop infinito
+
 
     return (
         <div className="flex flex-col items-center justify-center h-screen">
