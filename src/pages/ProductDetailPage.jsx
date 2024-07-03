@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { getProductById } from "../api";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 export default function ProductDetailPage() {
+    useAuth();
     const {id} = useParams();
     const[product, setProduct] = useState({});//se inicializa como objeto vacio
     useEffect(() => {

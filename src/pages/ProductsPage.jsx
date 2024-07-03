@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../api";
 import { toast } from "sonner";
 import {Link, useNavigate} from 'react-router-dom';
+import useAuth from "../hooks/useAuth";
 
 /* 
 El useEffect se ejecuta dos veces, una vez cuando el componente se monta y otra vez cuando el componente se actualiza.
@@ -12,15 +13,13 @@ export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
 
+    //const token = useAuth();
+
+    useAuth();
+
     useEffect(() => { 
         
-        const token = window.localStorage.getItem("token");
-        if (!token) {
-            toast.error("No autorizado");
-            navigate("/login");
-        }
-
-        getProducts()
+         getProducts()
         .then((prods) => {
             setProducts(prods);
         }).catch((error) => {
